@@ -5,6 +5,7 @@ import LoginPage from './pages/Login/LoginPage.js'
 import RegisterPage from './pages/Register/RegisterPage.js'
 import AuthRoute from './components/AuthRoute/AuthRoute.js'
 import ProfilePage from './pages/Profile/ProfilePage.js'
+import EditProfilePage from './pages/Profile/EditProfilePage.js'
 
 export default function AppRoutes() {
   return (
@@ -17,6 +18,10 @@ export default function AppRoutes() {
       <Route path='/profile' element={
         <AuthRoute>
           <ProfilePage />
+        </AuthRoute>} />
+      <Route path='/editprofile' element={
+        <AuthRoute>
+          <EditProfilePage />
         </AuthRoute>} />
     </Routes>
   )

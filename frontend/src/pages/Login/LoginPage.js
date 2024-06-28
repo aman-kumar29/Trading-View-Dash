@@ -7,6 +7,7 @@ import Title from '../../components/Title/Title.js';
 import Input from '../../components/Input/Input.js';
 import Button from '../../components/Button/Button.js';
 import { EMAIL } from '../../constants/patterns.js';
+
 export default function LoginPage() {
   const {
     handleSubmit,
@@ -20,40 +21,52 @@ export default function LoginPage() {
   const returnUrl = params.get('returnUrl');
 
   useEffect(() => {
-    if (!user) return;
-
-    returnUrl ? navigate(returnUrl) : navigate('/');
-  }, [user,returnUrl]);
+    if (user) {
+      returnUrl ? navigate(returnUrl) : navigate('/');
+    }
+  }, [user, returnUrl, navigate]);
 
   const submit = async ({ email, password }) => {
     await login(email, password);
   };
 
   return (
-    <div className={classes.container}>
+    <div className={classes.loginContainer}>
       <div className={classes.details}>
-        <Title title="Login" />
-        <form onSubmit={handleSubmit(submit)} noValidate>
-          <Input
-            type="email"
-            label="Email"
-            {...register('email', {
-              required: true,
-              pattern: EMAIL,
-            })}
-            error={errors.email}
-          />
+        <div className={classes.leftColumn}>
+          <img src="./login_side.png" alt="Background Image" className={classes.image} />
+        </div>
+        <div className={classes.rightColumn}>
+          <Title title="Sign in with Email" />
+          <form onSubmit={handleSubmit(submit)} noValidate>
+            <Input
+              type="email"
+              label="Email"
+              {...register('email', {
+                required: true,
+                pattern: EMAIL,
+              })}
+              error={errors.email}
+              className={classes.input}
+            />
 
-          <Input
-            type="password"
-            label="Password"
-            {...register('password', {
-              required: true,
-            })}
-            error={errors.password}
-          />
+            <Input
+              type="password"
+              label="Password"
+              {...register('password', {
+                required: true,
+              })}
+              error={errors.password}
+              showPasswordToggle // Add this prop for visibility toggle
+              className={classes.input}
+            />
 
-          <Button type="submit" text="Login" />
+            <div className={classes.register}>
+              <Link to="/forgot-password">Forgot Password?</Link>
+            </div>
+
+            <Button type="submit" text="Login" className={classes.button} />
+          </form>
 
           <div className={classes.register}>
             New user? &nbsp;
@@ -61,7 +74,7 @@ export default function LoginPage() {
               Register here
             </Link>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

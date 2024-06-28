@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import CartProvider from './hooks/useCart.js';
 import './axiosConfig.js'
 import { AuthProvider } from './hooks/useAuth.js';
 import { LoadingProvider } from './hooks/useLoading.js';
@@ -18,7 +17,6 @@ root.render(
     <BrowserRouter>
       <LoadingProvider>
         <AuthProvider>
-          <CartProvider>
             <App />
             <ToastContainer
               position='bottom-right'
@@ -32,7 +30,6 @@ root.render(
               pauseOnHover
               theme='light'
             />
-          </CartProvider>
         </AuthProvider>
       </LoadingProvider>
     </BrowserRouter>

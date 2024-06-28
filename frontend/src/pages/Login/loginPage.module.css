@@ -1,23 +1,113 @@
-.container {
+/* Global styles */
+.loginContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  margin-top: 3rem;
+  padding :0;
+  margin:0;
+  height: 100vh;
+  background-color: black; /* Black background for larger screens */
 }
 
 .details {
-  width: 28rem;
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Adjust max-width as needed */
 }
 
-.details form {
+.leftColumn {
+  flex: 1;
+  display: flex; /* Ensure leftColumn takes up full space */
+  align-items: center; /* Center image vertically */
+  padding: 0;
+  margin: 0;
+}
+
+.rightColumn {
+  flex: 1;
+  background-color: #000; /* Black background for the form */
+  padding: 20px;
+  color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for a card effect */
+  border-radius: 8px;
+}
+
+.image {
+  width: 100%; /* Ensure the image takes full width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure image does not exceed parent height */
+  object-fit: cover; /* Cover to fill the entire leftColumn */
+}
+
+/* For larger screens */
+@media (min-width: 768px) {
+  .leftColumn {
+    display: flex; /* Ensure leftColumn is displayed */
+    padding: 0;
+    margin: 0;
+  }
+
+  .rightColumn {
+    padding-left: 60px; /* Adjust padding for content separation */
+  }
+}
+
+/* For smaller screens */
+@media (max-width: 767px) {
+  .leftColumn {
+    display: none; /* Hide leftColumn for smaller screens */
+  }
+
+  .rightColumn {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+}
+
+.loginForm {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.input:focus {
+  outline: none;
+  border-color: dodgerblue; /* Blue border when focused */
+}
+
+.forgotPassword {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 1px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #0073e6; /* Darker shade of blue on hover */
 }
 
 .register {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.register a {
+  color: dodgerblue;
 }

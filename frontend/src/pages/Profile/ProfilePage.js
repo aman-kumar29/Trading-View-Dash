@@ -1,55 +1,33 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
 import { useAuth } from '../../hooks/useAuth';
 import classes from './profilePage.module.css';
-// import Title from '../../components/Title/Title';
-import Input from '../../components/Input/Input';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button/Button';
-import ChangePassword from '../../components/ChangePassword/ChangePassword.js';
 
 export default function ProfilePage() {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
-
-  const { user, updateProfile } = useAuth();
-
-  const submit = user => {
-    updateProfile(user);
-  };
-
+  const { user } = useAuth(); // Assuming user details are retrieved from context or hook
+  const navigate = useNavigate();
   return (
     <div className={classes.container}>
       <div className={classes.details}>
-        <Title title="Update Profile" />
-        <form onSubmit={handleSubmit(submit)}>
-          <Input
-            defaultValue={user.name}
-            type="text"
-            label="Name"
-            {...register('name', {
-              required: true,
-              minLength: 5,
-            })}
-            error={errors.name}
-          />
-          <Input
-            defaultValue={user.address}
-            type="text"
-            label="Address"
-            {...register('address', {
-              required: true,
-              minLength: 10,
-            })}
-            error={errors.address}
-          />
 
-          <Button type="submit" text="Update" backgroundColor="#009e84" />
-        </form>
+        <div className={classes.profileSection}>
+          <div className={classes.profileLabel}>Name:</div>
+          <div className={classes.profileValue}>{user.name}</div>
+        </div>
 
-        <ChangePassword />
+        <div className={classes.profileSection}>
+          <div className={classes.profileLabel}>Address:</div>
+          <div className={classes.profileValue}>{user.address}</div>
+        </div>
+
+        <div className={classes.buttons}>
+            <Button text="Edit Details" onClick={
+              ()=>{
+                navigate('/editprofile');
+              }
+            }/>
+        </div>
       </div>
     </div>
   );

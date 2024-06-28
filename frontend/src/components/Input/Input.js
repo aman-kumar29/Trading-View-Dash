@@ -25,7 +25,7 @@ function Input(
         defaultValue={defaultValue}
         className={classes.input}
         type={type}
-        placeholder={label}
+        placeholder=""
         ref={ref}
         name={name}
         onChange={onChange}
