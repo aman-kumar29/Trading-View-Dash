@@ -1,0 +1,122 @@
+/* Reset default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden; /* Ensure no horizontal scrolling */
+  }
+  
+  /* Background styles */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../components/TradingCharts/mock-trading-view-charts-1.png');
+    opacity: 0.4; /* Adjust opacity as needed */
+    z-index: -2;
+    animation: none 200s linear infinite; /* Animation properties */
+    overflow: hidden;
+  }
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1;
+  }
+
+
+/* Dashboard.css */
+
+.dashboard-container {
+  max-width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.dashboard-container p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.dashboard-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  flex: 1;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.stat-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff; /* Blue color for numbers */
+}
+
+.quick-actions {
+  margin-bottom: 20px;
+}
+
+.quick-actions h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.action-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.subscribe-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745; /* Green color for subscribe button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #218838;
+}
