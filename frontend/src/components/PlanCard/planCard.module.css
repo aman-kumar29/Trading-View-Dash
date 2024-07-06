@@ -1,0 +1,34 @@
+/* planCard.module.css */
+
+.planCard {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+  }
+  
+  .planCard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .planCard.selected {
+    border: 2px solid #007bff;
+  }
+  
+  .title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .planDetails p {
+    margin: 5px 0;
+    color: #b3b3b3;
+    font-size: 14px;
+  }
+  
