@@ -1,29 +1,27 @@
 /* subscription.module.css */
 
 .subscription-container {
-    max-width: 900px;
+    max-width: 95%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
     background-color: #f2f2f2;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .plans-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height:auto;
+    flex-direction: row;
     gap: 20px;
   }
-  
-  @media (min-width: 600px) {
-    .plans-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-  
+    
   @media (min-width: 900px) {
     .plans-grid {
-      grid-template-columns: 1fr 1fr 1fr;
+      flex-direction : row;
     }
   }
   

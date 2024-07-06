@@ -33,7 +33,7 @@ const SubscriptionPage = () => {
   return (
     <div className="subscription-container">
       <Title text='Starter Plans' />
-      <div className="plans-grid">
+      <center className="plans-grid">
         {starterPlans.map((plan) => (
           <PlanCard
             key={plan.id}
@@ -45,9 +45,9 @@ const SubscriptionPage = () => {
             selected={selectedPlan === plan}
           />
         ))}
-      </div>
+      </center>
       <Title text='Other Plans' />
-      <div className="plans-grid">
+      <center className="plans-grid">
         {otherPlans.map((plan) => (
           <PlanCard
             key={plan.id}
@@ -59,7 +59,7 @@ const SubscriptionPage = () => {
             selected={selectedPlan === plan}
           />
         ))}
-      </div>
+      </center>
       <Button
         className={`pay-button ${selectedPlan ? 'active' : ''}`}
         text="Pay Now"

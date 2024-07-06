@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.649dcadf.css",
-    "main.js": "/static/js/main.ab80dfa5.js",
+    "main.css": "/static/css/main.0f80a9bc.css",
+    "main.js": "/static/js/main.b817ea05.js",
     "static/js/453.8ab44547.chunk.js": "/static/js/453.8ab44547.chunk.js",
     "static/media/mock-trading-view-charts-1.png": "/static/media/mock-trading-view-charts-1.3d766ae38da686d85193.png",
     "index.html": "/index.html",
-    "main.649dcadf.css.map": "/static/css/main.649dcadf.css.map",
-    "main.ab80dfa5.js.map": "/static/js/main.ab80dfa5.js.map",
+    "main.0f80a9bc.css.map": "/static/css/main.0f80a9bc.css.map",
+    "main.b817ea05.js.map": "/static/js/main.b817ea05.js.map",
     "453.8ab44547.chunk.js.map": "/static/js/453.8ab44547.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.649dcadf.css",
-    "static/js/main.ab80dfa5.js"
+    "static/css/main.0f80a9bc.css",
+    "static/js/main.b817ea05.js"
   ]
 }

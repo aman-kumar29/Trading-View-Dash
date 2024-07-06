@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './planCard.module.css'; // Import your CSS file for styling
 
-const PlanCard = ({ title, price, duration, member, onClick, selected }) => {
+const PlanCard = ({ title, price, duration, onClick, selected }) => {
   return (
     <div
       className={`${styles.planCard} ${selected ? styles.selected : ''}`}
