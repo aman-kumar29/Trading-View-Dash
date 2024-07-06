@@ -7,6 +7,7 @@ import AuthRoute from './components/AuthRoute/AuthRoute.js'
 import ProfilePage from './pages/Profile/ProfilePage.js'
 import EditProfilePage from './pages/Profile/EditProfilePage.js'
 import Dashboard from './pages/Dashboard/Dashboard.js'
+import SubscriptionPage from './pages/Subscription/Subscription.js'
 
 export default function AppRoutes() {
   return (
@@ -23,6 +24,10 @@ export default function AppRoutes() {
       <Route path='/editprofile' element={
         <AuthRoute>
           <EditProfilePage />
+        </AuthRoute>} />
+      <Route path='/subscription' element={
+        <AuthRoute>
+          <SubscriptionPage />
         </AuthRoute>} />
     </Routes>
   )

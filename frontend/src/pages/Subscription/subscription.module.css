@@ -1,0 +1,70 @@
+/* subscription.module.css */
+
+.subscription-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .plans-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  @media (min-width: 600px) {
+    .plans-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .plans-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  
+  .plan-card {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .plan-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .plan-card.selected {
+    border: 2px solid #007bff;
+  }
+  
+  .pay-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #28a745; /* Green color for pay button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pay-button.active {
+    background-color: #218838;
+  }
+  
+  .pay-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
