@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useLocation } from 'react-router-dom';
 import './paymentPage.module.css'; // Import your CSS file for styling
 import { Container, Typography, Button, Stepper, Step, StepLabel, Box, TextField } from '@mui/material';
-import { Form, Card, Row, Col } from 'react-bootstrap';
+import { Form, Card, Toast } from 'react-bootstrap';
 import PlanCard from '../../components/PlanCard/PlanCard';
 
 const PaymentPage = () => {
@@ -42,16 +43,23 @@ const PaymentPage = () => {
     const handleSubmitPayment = () => {
         if (utrNumber && screenshot) {
             console.log(`UTR: ${utrNumber}, Screenshot: ${screenshot.name}`);
-            // Handle submission logic here
+        }
+        else {
+            toast.error("UTR or Proof Image missing")
         }
     };
 
     const handlePaymentApprovalRequest = () => {
-        setPaymentRequestStatus('processing');
-        // Simulate API call
-        setTimeout(() => {
-            setPaymentRequestStatus('success');
-        }, 2000);
+        if (!utrNumber || !screenshot) {
+            toast.error("UTR or Proof Image missing")
+        }
+        else {
+            setPaymentRequestStatus('processing');
+            // Simulate API call
+            setTimeout(() => {
+                setPaymentRequestStatus('success');
+            }, 2000);
+        }
     };
 
     const getStepContent = (step) => {
@@ -82,14 +90,17 @@ const PaymentPage = () => {
                     <Form>
                         <Form.Group className="mb-3">
                             <Typography variant="h6">Step 2: Enter UTR Number</Typography>
-                            <TextField
-                                fullWidth
-                                variant="outlined"
-                                margin="normal"
-                                label="UTR Number"
-                                value={utrNumber}
-                                onChange={handleUtrChange}
-                            />
+                            <div style={{ border: "white 0.01px solid" }}>
+                                <TextField
+                                    fullWidth
+                                    id="outlined-basic"
+                                    label="UTR Number"
+                                    variant="outlined"
+                                    value={utrNumber}
+                                    onChange={handleUtrChange}
+                                />
+                            </div>
+
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Typography variant="h6">Upload Proof of Payment</Typography>

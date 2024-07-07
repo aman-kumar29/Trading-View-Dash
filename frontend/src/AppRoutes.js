@@ -1,6 +1,5 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import HomePage from './pages/HomePage.jsx'
 import LoginPage from './pages/Login/LoginPage.js'
 import RegisterPage from './pages/Register/RegisterPage.js'
 import AuthRoute from './components/AuthRoute/AuthRoute.js'
