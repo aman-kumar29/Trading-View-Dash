@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import './subscription.module.css'; // Import your CSS file for styling
 import Title from '../../components/Title/Title.js';
 import Button from '../../components/Button/Button.js';
@@ -22,8 +23,10 @@ const SubscriptionPage = () => {
   const handlePayNow = () => {
     if (selectedPlan) {
       console.log(`User selected plan: ${selectedPlan.title}`);
-      // Navigate to payment page with selected plan
       navigate('/payment', { state: { selectedPlan } });
+    }
+    else{
+      toast.error("No Plan Selected");
     }
   };
 

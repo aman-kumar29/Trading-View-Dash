@@ -1,7 +1,6 @@
-/* subscription.module.css */
-
 .subscription-container {
-  max-width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
   padding: 30px;
   background-color: #f2f2f2;
   border-radius: 8px;
@@ -45,46 +44,4 @@
   background-color: #ccc;
   cursor: not-allowed;
 }
-
-.payment-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.progress-bar {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.step {
-  padding: 10px;
-  border-radius: 4px;
-  background-color: #ccc;
-  color: #fff;
-  width: 100px;
-  text-align: center;
-}
-
-.step.active {
-  background-color: #28a745;
-}
-
-.step-content {
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
-}
-
-.qr-code img {
-  max-width: 200px;
-  margin-bottom: 10px;
-}
-
-.qr-code p {
-  font-size: 18px;
-  font-weight: bold;
-}
-
+  

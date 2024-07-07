@@ -1,10 +1,11 @@
 /* Reset default styles */
-body, html {
+body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
     color: #ffffff;
     overflow-x: hidden; /* Ensure no horizontal scrolling */
+    background-color: black;
   }
   
   /* Background styles */
