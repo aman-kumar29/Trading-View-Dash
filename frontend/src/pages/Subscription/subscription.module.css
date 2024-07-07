@@ -1,49 +1,90 @@
 /* subscription.module.css */
 
 .subscription-container {
-    max-width: 95%;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
+  max-width: 100%;
+  padding: 30px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.plans-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: auto;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media (min-width: 900px) {
   .plans-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    height:auto;
     flex-direction: row;
-    gap: 20px;
   }
-    
-  @media (min-width: 900px) {
-    .plans-grid {
-      flex-direction : row;
-    }
-  }
-  
-  .pay-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin-top: 20px;
-    background-color: #28a745; /* Green color for pay button */
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .pay-button.active {
-    background-color: #218838;
-  }
-  
-  .pay-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
+}
+
+.pay-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #28a745; /* Green color for pay button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pay-button.active {
+  background-color: #218838;
+}
+
+.pay-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.payment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.step {
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #ccc;
+  color: #fff;
+  width: 100px;
+  text-align: center;
+}
+
+.step.active {
+  background-color: #28a745;
+}
+
+.step-content {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.qr-code img {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+.qr-code p {
+  font-size: 18px;
+  font-weight: bold;
+}
+

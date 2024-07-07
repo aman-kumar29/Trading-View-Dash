@@ -8,6 +8,7 @@ import ProfilePage from './pages/Profile/ProfilePage.js'
 import EditProfilePage from './pages/Profile/EditProfilePage.js'
 import Dashboard from './pages/Dashboard/Dashboard.js'
 import SubscriptionPage from './pages/Subscription/Subscription.js'
+import PaymentPage from './pages/Payment/PaymentPage.js'
 
 export default function AppRoutes() {
   return (
@@ -28,6 +29,10 @@ export default function AppRoutes() {
       <Route path='/subscription' element={
         <AuthRoute>
           <SubscriptionPage />
+        </AuthRoute>} />
+      <Route path='/payment' element={
+        <AuthRoute>
+          <PaymentPage />
         </AuthRoute>} />
     </Routes>
   )

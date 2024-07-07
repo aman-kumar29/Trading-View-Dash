@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './subscription.module.css'; // Import your CSS file for styling
 import Title from '../../components/Title/Title.js';
 import Button from '../../components/Button/Button.js';
@@ -10,14 +11,9 @@ const starterPlans = [
   { id: 3, title: '1 Month Plan', price: '$49.99', duration: 'Monthly', member: 'Single User' },
 ];
 
-const otherPlans = [
-  { id: 4, title: '2 Months Plan', price: '$89.99', duration: 'Monthly', member: 'Single User' },
-  { id: 5, title: '6 Months Plan', price: '$199.99', duration: 'Annually', member: 'Single User' },
-  { id: 6, title: '1 Year Plan', price: '$399.99', duration: 'Annually', member: 'Single User' },
-];
-
 const SubscriptionPage = () => {
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const navigate = useNavigate();
 
   const handleSelectPlan = (plan) => {
     setSelectedPlan(plan);
@@ -26,14 +22,15 @@ const SubscriptionPage = () => {
   const handlePayNow = () => {
     if (selectedPlan) {
       console.log(`User selected plan: ${selectedPlan.title}`);
-      // Handle payment logic here
+      // Navigate to payment page with selected plan
+      navigate('/payment', { state: { selectedPlan } });
     }
   };
 
   return (
-    <div className="subscription-container">
+    <center className="subscription-container">
       <Title text='Starter Plans' />
-      <center className="plans-grid">
+      <div className="plans-grid">
         {starterPlans.map((plan) => (
           <PlanCard
             key={plan.id}
@@ -45,28 +42,14 @@ const SubscriptionPage = () => {
             selected={selectedPlan === plan}
           />
         ))}
-      </center>
-      <Title text='Other Plans' />
-      <center className="plans-grid">
-        {otherPlans.map((plan) => (
-          <PlanCard
-            key={plan.id}
-            title={plan.title}
-            price={plan.price}
-            duration={plan.duration}
-            member={plan.member}
-            onClick={() => handleSelectPlan(plan)}
-            selected={selectedPlan === plan}
-          />
-        ))}
-      </center>
+      </div>
       <Button
         className={`pay-button ${selectedPlan ? 'active' : ''}`}
         text="Pay Now"
         onClick={handlePayNow}
         disabled={!selectedPlan}
       />
-    </div>
+    </center>
   );
 };
 
